@@ -1,0 +1,26 @@
+1. Goal (form the goal) 
+2. Plan (the action) 
+3. Specify (an action sequence) 
+4. Perform (the action sequence) 
+5. Perceive (the state of the world) 
+6. Interpret (the perception) 
+7. Compare (the outcome with the goal)
+
+Encountered difficulty with zoom. Not very user friendy according to Don Norman hahahaha. 
+
+1. Create new very fast
+2. some difficulty with creating a new question
+3. "Quiz" and not "Question" seems to be somewhat confusing. 
+4. Tries to save the kahoot after the first question is created. Safety net prompt. 
+5. Has not put the timer correctly, fault might be on my part for not explainnig properly. 
+6. Remembers to put in the answers. 
+7. Uses copy-paste to insert questions and alternatives. 
+8. No sign of any frustration of irritation. Some confusion. 
+9. Overall very effective. 
+
+Subjects thoughts:
+Simple
+You learn as you go and then you remember
+Didnt understand at first, specifically the way the questions are structured to the left. 
+
+Subject has previous experience but doesn't remember anything and says it felt like it was the first time. 

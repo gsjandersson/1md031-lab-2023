@@ -1,0 +1,16 @@
+1. Create exists on front page when logged in. 
+Button is blue and stands out. 
+A lot of stuff other than create exists. I can see my grandma getting confused. 
+Only says "create" and not "create quiz". Two options: on for quiz and one for course.
+2. It actually says "kahoot" and not quiz. If one is unfamiliar with kahoot that might be confusing. 
+During the briefing before my study I will tell them to create a quiz and not a kahoot,
+but it's very likely that they know what kahoot is. 
+3. Several choices with short explanations to what they are. 
+4. Directly in to GUI. 
+5. Easy to add question and alternatives. 
+6. Functions that are the most likely you want to perform are in a distinct blue. Therefore easy to spot. 
+7. If you miss to add an answer and try to save the quiz it will prompt you to do so. Safety net. 
+8. When you're finished it gives you the three most likely things you want to use your kahoot for. 
+
+Only few steps from logging in to having a finished quiz. Easy to create. 
+Most likely choices highlighted. Safety net. 

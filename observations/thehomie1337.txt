@@ -1,0 +1,15 @@
+1. Goal (form the goal) 
+Make a quiz
+2. Plan (the action) 
+3. Specify (an action sequence) 
+4. Perform (the action sequence) 
+5. Perceive (the state of the world) 
+6. Interpret (the perception) 
+7. Compare (the outcome with the goal)
+
+The GUI changes when you resize the window making it a little bit harder to create a quiz:
+Some buttons change like the "create" button, it becomes a plus. 
+The circle for marking the right answer become smaller and sometimes when clicked something else 
+pops up blocking the request to mark the right answer, frustrating. 
+
+Otherwise the creation of the quiz went smoothly. The subject has previous kahoot experience. s

@@ -1,0 +1,7 @@
+1. Goal (form the goal) 
+2. Plan (the action) 
+3. Specify (an action sequence) 
+4. Perform (the action sequence) 
+5. Perceive (the state of the world) 
+6. Interpret (the perception) 
+7. Compare (the outcome with the goal)
