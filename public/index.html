@@ -31,8 +31,7 @@
 
     <div style="display: inline-block;">
         <h2>Crazy bird borger</h2>
-        <img src="img/crazy_borger.png" alt="crazy_borger" title="crazy_borger"
-            style="width: 200px;">
+        <img src="img/crazy_borger.png" alt="crazy_borger" title="crazy_borger" style="width: 200px;">
         <ul>
             <li>Bird meat</li>
             <li>Awesomeness</li>
@@ -55,21 +54,51 @@
 
     <section>
         <h3>Who are you?</h3>
-	<p>Provide information for delivery:</p>
+        <p>Provide information for delivery:</p>
     </section>
 
-    <p>
-    <label for="firstname">First</label><br>
-    <input type="text" id="firstname" name="fn" required="required" placeholder="First name">
-</p>
-<p>
-    <label for="lastname">Last</label><br>
-    <input type="text" id="lastname" name="ln" placeholder="Last name">
-</p>
-<p>
-	<label for"email">Email</label><br>
-    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-</p>
+    <form>
+        <p>
+            <label for="fullname">Full name</label><br>
+            <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+        </p>
+        <p>
+            <label for="email">E-mail</label><br>
+            <input type="text" id="email" name="em" placeholder="E-mail address">
+        </p>
+        <p>
+            <label for="street">Street</label><br>
+            <input type="text" id="street" name="st" required="required" placeholder="Street name">
+        </p>
+        <p>
+            <label for="house">House number</label><br>
+            <input type="text" id="housenumber" name="hn" required="required" placeholder="House number">
+        </p>
+
+        <p>
+            <label for="payment_method">Payment method</label><br>
+            <select id="payment_method" name="p_m">
+                <option>Card</option>
+                <option>Swish</option>
+                <option>Monero</option>
+                <option selected="selected">OSRS gp</option>
+            </select>
+        </p>
+        <p>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="gender" value="other" checked>
+        </p>
+    </form>
+
+    <button type="submit">
+        <img src="img/submit-button-png-25802.png">
+    </button>
 
     <hr>
     <footer>
