@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Bord burger",
+        "kCal": 750,
+        "lactose": true,
+        "gluten": true,
+        "img": "../../img/burger1.jpeg"
+    },
+    {
+        "name": "Crazy burger",
+        "kCal": 2500,
+        "lactose": true,
+        "gluten": true,
+        "img": "../../img/crazy_borger.png"
+    },
+    {
+        "name": "Mmmm burger",
+        "kCal": 500,
+        "lactose": false,
+        "gluten": true,
+        "img": "../../img/sus_borger.png"
+    }
+]

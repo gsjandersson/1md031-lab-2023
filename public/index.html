@@ -1,120 +1,17 @@
-<!DOCTYPE HTML>
-<html lang="en">
-
-<head>
-    <title>Page title shown in window title</title>
-    <meta charset="utf-8"/>
-    <link rel="reset" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-</head>
-
-<body>
-    <header>
-        <h1 style="position:absolute; color:white; top: 50%; left: 50%; transform: translate(-50%, -50%);">Welcome to
-            Bird Burgers!</h1>
-        <img src="img/burger_header.jpeg" id="burger_header">
-    </header>
-
-    <section id="burgers">
-        <h2>If you would be a bird, which one would you be?</h2>
-        <p>Choose bird borger. We will hunt, pluck and cook a bird of your choice!</p>
-
-        <div class="wrapper">
-            <div>
-                <h2>Big borb borger</h2>
-                <img src="img/burger1.jpeg" alt="Burger1" title="Hawk burger" style="width: 200px;">
-                <ul class="allergies">
-                    <li>Bird meat</li>
-                    <li>Awesomeness</li>
-                    <li>Damp bread</li>
-                    <li>Burger tings</li>
-                    <li>Might contain traces of cyanide</li>
-                    <li>Gluten</li>
-                    <li>Lactose</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2>Crazy bird borger</h2>
-                <img src="img/crazy_borger.png" alt="crazy_borger" title="crazy_borger" style="width: 200px;">
-                <ul class="allergies">
-                    <li>Bird meat</li>
-                    <li>Awesomeness</li>
-                    <li>Damp bread</li>
-                    <li>Burger tings</li>
-                    <li>Might contain traces of cyanide</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2>I can't believe it's not bird meat! borger</h2>
-                <img src="img/sus_borger.png" alt="sus_borger" title="sus_borger" style="width: 200px;">
-                <ul class="allergies">
-                    <li>Not bird meat</li>
-                    <li>Flavor</li>
-                    <li>Burger tings</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="order_information">
-        <h3>Who are you?</h3>
-        <p>Provide information for delivery:</p>
-
-
-        <form>
-            <p>
-                <label for="fullname">Full name</label><br>
-                <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
-            </p>
-            <p>
-                <label for="email">E-mail</label><br>
-                <input type="text" id="email" name="em" placeholder="E-mail address">
-            </p>
-            <p>
-                <label for="street">Street</label><br>
-                <input type="text" id="street" name="st" required="required" placeholder="Street name">
-            </p>
-            <p>
-                <label for="house">House number</label><br>
-                <input type="text" id="housenumber" name="hn" required="required" placeholder="House number">
-            </p>
-
-            <p>
-                <label for="payment_method">Payment method</label><br>
-                <select id="payment_method" name="p_m">
-                    <option>Card</option>
-                    <option>Swish</option>
-                    <option>Monero</option>
-                    <option selected="selected">OSRS gp</option>
-                </select>
-            </p>
-            <p>
-                <label for="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male">
-
-                <label for="female">Female</label>
-                <input type="radio" id="female" name="gender" value="female">
-
-                <label for="other">Other</label>
-                <input type="radio" id="other" name="gender" value="other" checked>
-            </p>
-        </form>
-
-        <button type="submit">
-            <img src="img/submit-button-png-25802.png" style="width: 100px">
-        </button>
-    </section>
-
-    <hr>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; Bird Burger Company</p>
-            <p>Contact us at <a href="mailto:contact@fakeburger.com">contact@birdburger.com</a></p>
-        </div>
-    </footer>
-
-</body>
-
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
