@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>{{ burger.name }}</h2>
+    Amount ordered: {{ amountOrdered }}
     <img v-bind:src="burger.img" style="width: 200px;">
     <ul class="allergies">
       <li>{{ burger.kCal }} kcal</li>
@@ -11,6 +12,12 @@
         Lactose
       </li>
     </ul>
+    <button v-on:click="addBurger">
+      <img src="img/submit-button-png-25802.png" style="width: 100px">
+    </button>
+    <button v-on:click="subtractBurger">
+      <img src="img/submit-button-png-25802.png" style="width: 100px">
+    </button>
   </div>
 </template>
   
@@ -24,9 +31,18 @@ export default {
     return {
       amountOrdered: 0
     }
+  },
+  methods: {
+    addBurger: function () {
+      this.amountOrdered += 1;
+    },
+    subtractBurger: function () {
+      if (this.amountOrdered > 0) {
+        this.amountOrdered -= 1;
+      }
+    }
   }
 }
-
 </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
