@@ -1,4 +1,5 @@
 <template>
+
   <body>
     <header>
       <h1 style="position:absolute; color:white; top: 50%; left: 50%; transform: translate(-50%, -50%);">Welcome to
@@ -11,7 +12,8 @@
       <p>Choose bird borger:</p>
 
       <div class="wrapper">
-        <Burger v-for="burger in burgers" v-bind:burger="burger" v-bind:key="burger.name" />
+        <Burger v-for="burger in burgers" v-bind:burger="burger" v-bind:key="burger.name"
+          v-on:burgerOrder="addOrder($event)" />
       </div>
     </section>
 
@@ -28,15 +30,6 @@
           <label for="email">E-mail</label><br>
           <input type="text" id="email" v-model="em" placeholder="E-mail address">
         </p>
-        <p>
-          <label for="street">Street</label><br>
-          <input type="text" id="street" v-model="st" required="required" placeholder="Street name">
-        </p>
-        <p>
-          <label for="house">House number</label><br>
-          <input type="text" id="housenumber" v-model="hn" required="required" placeholder="House number">
-        </p>
-
         <p>
           <label for="payment_method">Payment method</label><br>
           <select id="payment_method" v-model="pm">
@@ -57,6 +50,16 @@
           <label for="other">Other</label>
           <input checked type="radio" id="gender" v-model="gender" value="other">
         </p>
+        <h3>Where are you?</h3>
+        <p>Click on the map to set your location:</p>
+        <div id="map" v-on:click="setLocation">
+          <div id="target" v-bind:style="{ background: 'url(' + require('../../public/img/polacks.jpg') + ')' }">
+            <div v-if="location"
+              v-bind:style="{ position: 'absolute', left: location.x + 'px', top: location.y + 'px' }">
+              T
+            </div>
+          </div>
+        </div>
       </form>
 
       <button v-on:click="orderButtonClick">
@@ -81,20 +84,7 @@ import io from 'socket.io-client'
 import menu from '../assets/menu.json'
 
 const socket = io();
-const myBurgers = menu; // menu is imported from menu.json
-
-/* function MenuItem(name, kCal, gluten, lactose, img) {
-  this.name = name;
-  this.kCal = kCal;
-  this.gluten = gluten;
-  this.lactose = lactose;
-  this.img = img;
-} */
-
-/* const myBurgers = [
-  new MenuItem('Borb burger', 800, true, true, '../../img/burger1.jpeg'),
-  new MenuItem('Crazy burger', 2500, true, true, '../../img/crazy_borger.png'),
-  new MenuItem('Mmmm burger', 500, true, false, '../../img/sus_borger.png')] */
+const myBurgers = menu; 
 
 export default {
   name: 'HomeView',
@@ -104,12 +94,13 @@ export default {
   data: function () {
     return {
       burgers: myBurgers,
-      /*       fn: "",
-            em: "",
-            st: "",
-            hn: "", */
       pm: "OSRS gp",
-      gender: "Other"
+      gender: "Other",
+      location: {
+        x: 0,
+        y: 0
+      },
+      orderItems: {}
     }
   },
   methods: {
@@ -125,22 +116,39 @@ export default {
         this.hn,
         this.pm,
         this.gender
-      )
+      ),
+        socket.emit("addOrder", {
+          orderId: this.getOrderNumber(),
+          orderItems: this.orderItems,
+          location: this.location,
+          customer: {
+            name: this.fn,
+            email: this.em,
+            street: this.st,
+            house: this.hn,
+            payment: this.pm,
+          }
+        }
+
+        );
     },
-    addOrder: function (event) {
+
+    setLocation: function (event) {
+
       var offset = {
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top
       };
-      socket.emit("addOrder", {
-        orderId: this.getOrderNumber(),
-        details: {
-          x: event.clientX - 10 - offset.x,
-          y: event.clientY - 10 - offset.y
-        },
-        orderItems: ["Beans", "Curry"]
-      }
-      );
+      this.location = {
+        x: event.clientX - 10 - offset.x,
+        y: event.clientY - 10 - offset.y
+      };
+      console.log("Order added at", this.location.x, this.location.y);
+    },
+
+    addOrder: function (event) {
+      this.orderItems[event.name] = event.amount;
+      console.log("Order added", this.orderItems);
     }
   }
 }
@@ -192,8 +200,10 @@ header {
 }
 
 #map {
-  width: 300px;
-  height: 300px;
-  background-color: red;
+  position: relative;
+  overflow: scroll;
+  width: 1920px;
+  height: 1078px;
+  background-image: url('/home/guan/Skrivbord/Skola/Gränssnitt/1md031-lab-2023/public/img/polacks.jpg');
 }
 </style>

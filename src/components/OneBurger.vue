@@ -35,10 +35,12 @@ export default {
   methods: {
     addBurger: function () {
       this.amountOrdered += 1;
+      this.$emit('burgerOrder', { name: this.burger.name, amount: this.amountOrdered });
     },
     subtractBurger: function () {
       if (this.amountOrdered > 0) {
         this.amountOrdered -= 1;
+        this.$emit('burgerOrder', { name: this.burger.name, amount: this.amountOrdered });
       }
     }
   }
